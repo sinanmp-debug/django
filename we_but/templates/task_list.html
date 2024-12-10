@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TASK LIST</h1>
+    <a href="{% url'task_create' %}">create new task</a>
+    <ul>
+        {% for task in tasks %}
+        <li>{{task.title}}-{% if task.completed %} completed{% else %} pending {% endif %}
+            <a href="{% url'task.update'task.id %}">edit</a>
+            <a href="{% url 'task.delete'task.id %}">delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
