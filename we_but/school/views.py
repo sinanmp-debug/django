@@ -30,3 +30,5 @@ def task_list(request):
     tasks=Task_objects.all()
     return render (request,'task_list.html',{'tasks':tasks})
     
+def about(request):
+    return render (request,'about.html')
